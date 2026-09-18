@@ -1,10 +1,14 @@
 # -Sistema-de-estacionamiento-automatizado
 ---------------------------------------------------------------------------------------------------
 Para la creacion del sistema de estacionamiento en un sitio web y app el contenido es el siguiente:
+
 ---------------------------------------------------------------------------------------------------
 SITIO WEB:
+
 BASE DE DATOS (En este caso utilizare xampp para guardar los datos los cuales son[
+
 id,marbete,matricula_nombre_conductor,placa_vehiculo,fecha_de_entrada,hora_de_entrada,estado])
+
 CONECTAR LA BASE DE DATOS CON EL SITIO WEB UTILIZANDO (Python + Flask) :
 HERRRAMIENTAS: (LIBRERIAS)
 pip install flask pymysql
