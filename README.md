@@ -17,15 +17,19 @@ Crear la estructura de carpetas de tu proyecto
 Crear una carpeta en tu escritorio(nombre carpeta):
 Puedes programar en el software que mas te acomodes, utilizare vs code
 ---------------------------------------------------------------------------------------------------
-abre vs code y busca la carpeta donde la guardaste 
+Abre vs code y busca la carpeta donde la guardaste 
 Crea un archivo llamado app.py
 ---------------------------------------------------------------------------------------------------
-dentro de la carpeta que creaste crear dos carpetas extra (ESTRUCTURA):
+Dentro de la carpeta que creaste crear dos carpetas extra (ESTRUCTURA):
+---------------------------------------------------------------------------------------------------
 PROYECTO / (carpeta)
------APP.PY
+APP.PY
+---------------------------------------------------------------------------------------------------
 TEMPLATES / (carpeta)
------index.html
+index.html
+---------------------------------------------------------------------------------------------------
 STATIC / (carpeta)
 ---style.css
+---------------------------------------------------------------------------------------------------
 ---script.js
 
