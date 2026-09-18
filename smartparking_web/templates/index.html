@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estacionamiento Inteligente TESOEM - Panel del Policía</title>
+    <!-- Vinculamos el CSS externo -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>SmartParking TESOEM</h1>
+    <p>Panel de Control y Registro de Accesos</p>
+
+    <div class="container">
+        <div class="card">
+            <h2>Registrar Acceso Manual</h2>
+            <form action="/registrar" method="POST">
+                <div class="form-group">
+                    <label>Número de Marbete (Obligatorio):</label>
+                    <input type="number" name="marbete" required placeholder="Ej. 1024">
+                </div>
+                <div class="form-group">
+                    <label>Matrícula / ID:</label>
+                    <input type="text" name="matricula" required placeholder="Ej. 20233012">
+                </div>
+                <div class="form-group">
+                    <label>Nombre del Conductor:</label>
+                    <input type="text" name="nombre" required placeholder="Ej. Juan Pérez">
+                </div>
+                <div class="form-group">
+                    <label>Placa del Vehículo:</label>
+                    <input type="text" name="placa" required placeholder="Ej. ABC-123-D">
+                </div>
+                <button type="submit">Registrar Entrada</button>
+            </form>
+        </div>
+
+        <div class="card" style="border-top: 4px solid #c0392b;">
+            <h2>Gestión de Historial</h2>
+            <p style="color: #666; font-size: 14px; margin-bottom: 20px;">
+                Vaciar toda la base de datos y reiniciar los folios de ID a 1.
+            </p>
+            <form action="/limpiar" method="POST" onsubmit="return confirm('¿Estás seguro de borrar todo el historial y reiniciar los IDs a 1?');">
+                <button type="submit" class="btn-danger">Limpiar Todo el Historial</button>
+            </form>
+        </div>
+    </div>
+
+    <h2>Vehículos Dentro del Estacionamiento</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Marbete</th>
+            <th>Matrícula</th>
+            <th>Conductor</th>
+            <th>Placa</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Estado</th>
+        </tr>
+        {% for reg in registros %}
+        <tr>
+            <td>{{ reg[0] }}</td>
+            <td>{{ reg[1] }}</td>
+            <td>{{ reg[2] }}</td>
+            <td>{{ reg[3] }}</td>
+            <td>{{ reg[4] }}</td>
+            <td>{{ reg[5] }}</td>
+            <td>{{ reg[6] }}</td>
+            <td>{{ reg[7] }}</td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="8" style="text-align: center;">No hay registros de acceso todavía.</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Vinculamos el JavaScript externo -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
